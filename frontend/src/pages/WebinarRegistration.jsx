@@ -16,7 +16,6 @@ const WebinarRegistration = () => {
         webinar: '',
     });
 
-    // Fetch available webinars
     useEffect(() => {
         const fetchWebinars = async () => {
             try {
@@ -26,13 +25,11 @@ const WebinarRegistration = () => {
                 }
             } catch (err) {
                 console.error('Error fetching webinars:', err);
-                // Set default webinars if API fails
                 setWebinars([
                     { id: 1, title: 'INTRODUCTION TO SECURITY OPERATION CENTER (SOC) & WAZUH SIEM 2026' },
                 ]);
             }
         };
-
         fetchWebinars();
     }, []);
 
@@ -49,14 +46,12 @@ const WebinarRegistration = () => {
         setLoading(true);
         setError('');
 
-        // Basic validation
         if (!formData.name || !formData.nim || !formData.email || !formData.webinar) {
             setError('Semua field harus diisi');
             setLoading(false);
             return;
         }
 
-        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
             setError('Format email tidak valid');
@@ -66,9 +61,7 @@ const WebinarRegistration = () => {
 
         try {
             const response = await axios.post('/api/webinar/register', formData);
-
             if (response.data.success) {
-                // Navigate to success page with data
                 navigate('/webinar/success', {
                     state: {
                         name: formData.name,
@@ -79,10 +72,7 @@ const WebinarRegistration = () => {
             }
         } catch (err) {
             console.error('Registration error:', err);
-            setError(
-                err.response?.data?.message ||
-                'Terjadi kesalahan saat memproses pendaftaran. Silakan coba lagi.'
-            );
+            setError(err.response?.data?.message || 'Terjadi kesalahan saat memproses pendaftaran. Silakan coba lagi.');
         } finally {
             setLoading(false);
         }
@@ -91,7 +81,7 @@ const WebinarRegistration = () => {
     return (
         <div className="webinar-registration">
             <div className="registration-container">
-                <div className="terminal-prompt-line">root@csu:~# ./daftar_webinar.sh</div>
+                <div className="terminal-prompt-line" style={{color: '#f5f5f7'}}>root@csu:~# ./daftar_webinar.sh</div>
 
                 <div className="registration-card">
                     <h1 className="registration-title">Pendaftaran Webinar</h1>

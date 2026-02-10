@@ -9,15 +9,20 @@ const Home = () => {
         <header>
             <div className="hero-container">
                 <div className="hero">
+                    <span className="badge">CyberSec Community Unmul</span>
                     <h1>
-                        Students Community Passionate <br /> About <mark>Ethical Hacking</mark>
+                        Empowering The Next <br /> 
+                        Generation of <mark>Ethical Hackers</mark>
                     </h1>
+                    <p className="hero-subtitle">
+                        Komunitas mahasiswa informatika yang berfokus pada pengembangan skill keamanan siber, eksploitasi etis, dan pertahanan digital.
+                    </p>
                     <div className="btn-hero">
                         <button className="btn-activity" onClick={() => navigate('/achievements')}>
-                            Our Activity
+                            Lihat Pencapaian
                         </button>
                         <button className="btn-event" onClick={() => navigate('/webinar')}>
-                            Daftar Webinar
+                            Ikuti Webinar
                         </button>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -7,76 +7,49 @@
 }
 
 :root {
-  --primary-green: #6EDD4C;
-  --bg-dark: #141414;
-  --bg-nav: #1f1f1f;
-  --text-white: #ffffff;
+  --primary-green: #34C759;
+  /* Hijau Apple yang lebih vibrant */
+  --bg-dark: #0a0a0a;
+  --bg-card: rgba(28, 28, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-white: #f5f5f7;
+  --text-dim: #86868b;
 }
 
 body {
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-white);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 button {
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-a,
-button {
-  text-decoration: none;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
-/* Utility Classes */
-.text-center {
-  text-align: center;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.mt-1 {
-  margin-top: 10px;
-}
-
-.mt-2 {
-  margin-top: 20px;
-}
-
-.mt-3 {
-  margin-top: 30px;
-}
-
-.mb-1 {
-  margin-bottom: 10px;
-}
-
-.mb-2 {
-  margin-bottom: 20px;
-}
-
-.mb-3 {
-  margin-bottom: 30px;
-}
-
-/* Scrollbar Styling */
+/* Scrollbar Styling Minimalis */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-nav);
+  background: var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-green);
-  border-radius: 5px;
+  background: var(--glass-border);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5ac93a;
+  background: var(--text-dim);
 }

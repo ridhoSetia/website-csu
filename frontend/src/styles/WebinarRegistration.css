@@ -1,109 +1,130 @@
 .webinar-registration {
+    padding: 120px 20px 60px;
     min-height: 100vh;
-    padding: 120px 30px 60px;
-    background: #141414;
-    background-image: url('../assets/home.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, #1a3a1f 0%, #0a0a0a 100%);
     position: relative;
+    overflow: hidden;
 }
 
-.webinar-registration::before {
+/* Dekorasi cahaya di background */
+.webinar-registration::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(20, 20, 20, 0.7);
-    pointer-events: none;
+    width: 500px;
+    height: 500px;
+    background: var(--primary-green);
+    filter: blur(150px);
+    opacity: 0.1;
+    border-radius: 50%;
     z-index: 0;
 }
 
 .registration-container {
-    max-width: 600px;
     width: 100%;
+    max-width: 600px;
     position: relative;
     z-index: 1;
 }
 
+.terminal-prompt-line {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
 .registration-card {
-    background: #1f1f1f;
-    border: 2px solid #6EDD4C;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 5px 30px rgba(110, 221, 76, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 28px;
+    padding: 45px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 .registration-title {
-    font-size: 48px;
-    color: #6EDD4C;
-    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
     margin-bottom: 30px;
-    font-weight: 500;
+    text-align: center;
+    background: linear-gradient(180deg, #fff 0%, #86868b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.error-message {
+    background: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 59, 48, 0.2);
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .form-label {
     display: block;
-    color: #fff;
-    font-size: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-white);
     margin-bottom: 8px;
-    font-weight: normal;
+    margin-left: 4px;
 }
 
 .input-field {
     width: 100%;
-    padding: 12px 15px;
-    background: #141414;
-    border: 2px solid #6EDD4C;
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 18px;
     color: #fff;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-field:focus {
     outline: none;
-    border-color: #6EDD4C;
-    box-shadow: 0 0 10px rgba(110, 221, 76, 0.3);
+    border-color: var(--primary-green);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.1);
 }
 
-.input-field::placeholder {
-    color: #666;
-}
-
-select.input-field {
-    cursor: pointer;
+select.input-field option {
+    background: #1f1f1f;
+    color: #fff;
 }
 
 .submit-button {
     width: 100%;
-    padding: 15px;
-    background: #6EDD4C;
-    color: #141414;
+    padding: 16px;
+    background: var(--primary-green);
+    color: #000;
     border: none;
-    border-radius: 5px;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-weight: normal;
-    font-size: 20px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submit-button:hover:not(:disabled) {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(110, 221, 76, 0.4);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px rgba(52, 199, 89, 0.2);
 }
 
 .submit-button:disabled {
@@ -111,58 +132,24 @@ select.input-field {
     cursor: not-allowed;
 }
 
-.error-message {
-    background: rgba(255, 0, 0, 0.1);
-    border: 2px solid #ff0000;
-    border-radius: 5px;
-    padding: 15px;
-    color: #ff4444;
-    margin-bottom: 20px;
-    font-size: 16px;
-    text-align: center;
-}
-
 .loading-spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(20, 20, 20, 0.3);
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(0,0,0,0.1);
+    border-top: 3px solid #000;
     border-radius: 50%;
-    border-top-color: #141414;
-    animation: spin 1s ease-in-out infinite;
-    margin-right: 10px;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: scale(1) rotate(360deg); }
 }
 
 .form-footer {
     margin-top: 30px;
     text-align: center;
-    color: #666;
-    font-size: 14px;
-}
-
-.terminal-prompt-line {
-    color: #6EDD4C;
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-family: 'Pathway Gothic One', sans-serif;
-}
-
-@media (max-width: 768px) {
-    .webinar-registration {
-        padding: 100px 15px 30px;
-    }
-
-    .registration-card {
-        padding: 30px 20px;
-    }
-
-    .registration-title {
-        font-size: 36px;
-    }
+    color: var(--text-dim);
+    font-size: 13px;
+    line-height: 1.5;
 }

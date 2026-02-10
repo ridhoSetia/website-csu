@@ -1,57 +1,35 @@
 import React from 'react';
 import '../styles/Achievements.css';
-import goldMedal from '../assets/gold-medal.png';
-import silverMedal from '../assets/silver-medal.png';
-import bugIcon from '../assets/bug-icon.png';
 
 const Achievements = () => {
-    const achievements = [
-        {
-            type: 'GOLD',
-            tier: 'gold',
-            badge: goldMedal,
-            title: '1ST PLACE',
-            event: 'NCS 2025 - Cluster Kalimantan',
-            level: '[REGIONAL LEVEL]',
-        },
-        {
-            type: 'SILVER',
-            tier: 'silver',
-            badge: silverMedal,
-            title: 'THE BEST PROVINCE',
-            event: 'NCS 2025 - Kalimantan Timur',
-            level: '[PROVINCIAL LEVEL]',
-        },
-        {
-            type: 'GREEN',
-            tier: 'green',
-            badge: bugIcon,
-            title: 'LOR NASA',
-            event: 'Acknowledged by NASA',
-            level: 'Status: [LETTER OF RECOGNITION]',
-        },
-    ];
-
     return (
-        <div className="achievements">
-            <div className="achievements-container">
-                <div className="achievements-header">
-                    <div className="terminal-prompt-line">root@csu:~# ls -l /achievements/</div>
-                    <h1 className="achievements-title">ACHIEVEMENTS</h1>
+        <div className="achievements-container">
+            <p className="terminal-header">root@csu:~# ls -l /achievements/</p>
+            <h1 style={{fontSize: '48px', marginBottom: '40px'}}>ACHIEVEMENTS</h1>
+
+            <div className="achievement-list">
+                <div className="achievement-card">
+                    <div className="medal-type medal-gold">GOLD</div>
+                    <div className="achievement-info">
+                        <h3>1ST PLACE</h3>
+                        <p>NCS 2025 - Cluster Kalimantan [REGIONAL LEVEL]</p>
+                    </div>
                 </div>
 
-                <div className="achievements-grid">
-                    {achievements.map((achievement, index) => (
-                        <div key={index} className={`achievement-card ${achievement.tier}`}>
-                            <div className="achievement-badge">
-                                <img src={achievement.badge} alt={achievement.type} />
-                            </div>
-                            <div className="achievement-type">{achievement.type}</div>
-                            <h2 className="achievement-title">{achievement.title}</h2>
-                            <p className="achievement-description">{achievement.event}</p>
-                            <p className="achievement-meta">{achievement.level}</p>
-                        </div>
-                    ))}
+                <div className="achievement-card">
+                    <div className="medal-type medal-silver">SILVER</div>
+                    <div className="achievement-info">
+                        <h3>THE BEST PROVINCE</h3>
+                        <p>NCS 2025 - Kalimantan Timur [PROVINCIAL LEVEL]</p>
+                    </div>
+                </div>
+
+                <div className="achievement-card">
+                    <div className="medal-type medal-green">GREEN</div>
+                    <div className="achievement-info">
+                        <h3>LOR NASA</h3>
+                        <p>Acknowledged by NASA | Status: [LETTER OF RECOGNITION]</p>
+                    </div>
                 </div>
             </div>
         </div>
