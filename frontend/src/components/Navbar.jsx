@@ -30,7 +30,7 @@ const Navbar = () => {
                     <li><Link to="/members" className={isActive('/members')} onClick={() => setIsMenuOpen(false)}>Members</Link></li>
                 </ul>
 
-                <a href="https://discord.gg/yourlink" target="_blank" rel="noreferrer" className="join-discord">
+                <a href="https://discord.gg/syhTfqcH" target="_blank" rel="noreferrer" className="join-discord">
                     <span>Join Discord</span>
                     <i className="fab fa-discord"></i>
                 </a>

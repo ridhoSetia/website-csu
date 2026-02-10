@@ -11,8 +11,8 @@ const Home = () => {
                 <div className="hero">
                     <span className="badge">CyberSec Community Unmul</span>
                     <h1>
-                        Empowering The Next <br /> 
-                        Generation of <mark>Ethical Hackers</mark>
+                        Students Community <br /> 
+                        Passionate About <mark>Ethical Hacking</mark>
                     </h1>
                     <p className="hero-subtitle">
                         Komunitas mahasiswa informatika yang berfokus pada pengembangan skill keamanan siber, eksploitasi etis, dan pertahanan digital.

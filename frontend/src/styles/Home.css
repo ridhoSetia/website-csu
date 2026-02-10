@@ -53,6 +53,7 @@ header::before {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
+    font-size: 68px;
 }
 
 .hero h1 mark {
@@ -99,7 +100,14 @@ header::before {
     filter: brightness(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
+    header {
+        padding-top: 60px;    
+    }
+    .badge {
+        margin-bottom: 10px;
+    }
+
     .hero h1 {
         font-size: 48px;
     }
@@ -110,5 +118,11 @@ header::before {
 
     .btn-hero {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero h1 {
+        font-size: 32px;
     }
 }
