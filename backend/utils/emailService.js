@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
+// Impor fungsi yang benar dari template
+const { getConfirmationEmail } = require('../templates/emailTemplate'); 
 
-// Create transporter using Gmail SMTP
 const createTransporter = () => {
     return nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
@@ -13,23 +14,15 @@ const createTransporter = () => {
     });
 };
 
-/**
- * Send webinar registration confirmation email
- * @param {Object} data - Registration data
- * @param {string} data.name - Participant name
- * @param {string} data.email - Participant email
- * @param {string} data.nim - NIM/NIDN
- * @param {string} data.webinarTitle - Selected webinar title
- */
 const sendWebinarConfirmation = async (data) => {
     const transporter = createTransporter();
-    const emailTemplate = require('../templates/emailTemplate');
 
     const mailOptions = {
         from: process.env.EMAIL_FROM,
         to: data.email,
-        subject: '✅ Pendaftaran Webinar Berhasil - Cyber Security Community Unmul',
-        html: emailTemplate.getConfirmationEmail(data),
+        subject: 'Pendaftaran Webinar Berhasil - Cyber Security Community Unmul',
+        // Gunakan fungsi getConfirmationEmail di sini
+        html: getConfirmationEmail(data), 
     };
 
     try {

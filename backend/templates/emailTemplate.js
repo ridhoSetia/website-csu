@@ -2,7 +2,7 @@
  * Terminal-themed email template for webinar registration
  */
 const getConfirmationEmail = (data) => {
-    const { name, nim, webinarTitle } = data;
+    const { name, nim, email, webinarTitle } = data;
     const whatsappLink = process.env.WHATSAPP_GROUP_LINK || 'https://chat.whatsapp.com/Gw3ts2JHgP644wHoCtxS32';
 
     return `
@@ -164,6 +164,10 @@ const getConfirmationEmail = (data) => {
         <div class="info-row">
           <div class="info-label">▸ NIM/NIDN:</div>
           <div class="info-value">${nim}</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">▸ Email:</div>
+          <div class="info-value">${email}</div>
         </div>
         <div class="info-row">
           <div class="info-label">▸ Webinar:</div>

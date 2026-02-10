@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/WebinarRegistration.css';
 
+const api = axios.create({
+    baseURL: 'http://localhost:3001'
+});
+
 const WebinarRegistration = () => {
     const navigate = useNavigate();
     const [webinars, setWebinars] = useState([]);
@@ -19,7 +23,7 @@ const WebinarRegistration = () => {
     useEffect(() => {
         const fetchWebinars = async () => {
             try {
-                const response = await axios.get('/api/webinar/list');
+                const response = await api.get('/api/webinar/list');
                 if (response.data.success) {
                     setWebinars(response.data.data);
                 }
@@ -60,7 +64,7 @@ const WebinarRegistration = () => {
         }
 
         try {
-            const response = await axios.post('/api/webinar/register', formData);
+            const response = await api.post('/api/webinar/register', formData);
             if (response.data.success) {
                 navigate('/webinar/success', {
                     state: {
