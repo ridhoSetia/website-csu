@@ -1,0 +1,168 @@
+.webinar-registration {
+    min-height: 100vh;
+    padding: 120px 30px 60px;
+    background: #141414;
+    background-image: url('../assets/home.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.webinar-registration::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.7);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.registration-container {
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.registration-card {
+    background: #1f1f1f;
+    border: 2px solid #6EDD4C;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 30px rgba(110, 221, 76, 0.2);
+}
+
+.registration-title {
+    font-size: 48px;
+    color: #6EDD4C;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    background: #141414;
+    border: 2px solid #6EDD4C;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #6EDD4C;
+    box-shadow: 0 0 10px rgba(110, 221, 76, 0.3);
+}
+
+.input-field::placeholder {
+    color: #666;
+}
+
+select.input-field {
+    cursor: pointer;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background: #6EDD4C;
+    color: #141414;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(110, 221, 76, 0.4);
+}
+
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    padding: 15px;
+    color: #ff4444;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(20, 20, 20, 0.3);
+    border-radius: 50%;
+    border-top-color: #141414;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.form-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.terminal-prompt-line {
+    color: #6EDD4C;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .webinar-registration {
+        padding: 100px 15px 30px;
+    }
+
+    .registration-card {
+        padding: 30px 20px;
+    }
+
+    .registration-title {
+        font-size: 36px;
+    }
+}
