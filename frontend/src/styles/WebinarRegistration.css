@@ -166,8 +166,8 @@ select.input-field option {
 
 .logo-dewabiz {
     margin-top: 15px;
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 50px;
     object-fit: cover;
     object-position: center;
     background-color: rgba(255, 255, 255, 0.9); 
