@@ -5,7 +5,7 @@ import '../styles/WebinarRegistration.css';
 import dewabizLogo from '../assets/dewabiz.png';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: 'https://api.csu-community.id'
 });
 
 const WebinarRegistration = () => {
