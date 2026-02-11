@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/WebinarRegistration.css';
+import dewabizLogo from '../assets/dewabiz.png';
 
 const api = axios.create({
     baseURL: 'http://localhost:3001'
@@ -85,7 +86,7 @@ const WebinarRegistration = () => {
     return (
         <div className="webinar-registration">
             <div className="registration-container">
-                <div className="terminal-prompt-line" style={{color: '#f5f5f7'}}>root@csu:~# ./daftar_webinar.sh</div>
+                <div className="terminal-prompt-line" style={{ color: '#f5f5f7' }}>root@csu:~# ./daftar_webinar.sh</div>
 
                 <div className="registration-card">
                     <h1 className="registration-title">Pendaftaran Webinar</h1>
@@ -166,6 +167,13 @@ const WebinarRegistration = () => {
 
                     <div className="form-footer">
                         <p>Link WhatsApp grup akan dikirim ke email Anda setelah pendaftaran berhasil.</p>
+                    </div>
+
+                    <div className="sponsor">
+                        <h3>Powered By</h3>
+                        <a href="https://dewabiz.com/" target='_blank'>
+                            <img src={dewabizLogo} alt="Dewabiz Logo" className='logo-dewabiz' />
+                        </a>
                     </div>
                 </div>
             </div>
