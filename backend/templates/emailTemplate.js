@@ -3,7 +3,7 @@
  */
 const getConfirmationEmail = (data) => {
     const { name, nim, email, webinarTitle } = data;
-    const whatsappLink = process.env.WHATSAPP_GROUP_LINK || 'https://chat.whatsapp.com/Gw3ts2JHgP644wHoCtxS32';
+    const whatsappLink = process.env.WHATSAPP_GROUP_LINK || 'https://chat.whatsapp.com/Gw3ts2JHgP644wHoCtxS32?mode=gi_t';
 
     return `
 <!DOCTYPE html>
