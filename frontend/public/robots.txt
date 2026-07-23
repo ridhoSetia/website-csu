@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /members
+Allow: /achievements
+Allow: /webinar
+
+Disallow: /webinar/success
+
+Sitemap: https://csu-community.id/sitemap.xml
